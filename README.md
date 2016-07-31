@@ -1,11 +1,11 @@
-DevApp [![version](https://img.shields.io/badge/version-v0.1.0-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.1.0)
+DevApp [![version](https://img.shields.io/badge/version-v0.2.0-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.1.0)
 ========
 
 DevApp is a simple MVC framework and it contain:
- -BootStrap3 (Framework CSS)
- -FontAwesome(fonts)
- -Jquery
- -Twig for template views
+ - BootStrap3 (Framework CSS)
+ - FontAwesome(fonts)
+ - Jquery
+ - Twig for template views
 
 ### Getting Started 
 
