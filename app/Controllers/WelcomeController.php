@@ -15,7 +15,7 @@ class WelcomeController extends DevAppController
 {
     public function index($request, $response)
     {
-        return $this->view->render($response, 'welcome/home.html', [
+        return $this->view->render($response, 'welcome/home.twig', [
             'name'  =>  'Christian D. Rodríguez'
         ]);
     }
