@@ -64,6 +64,8 @@ class AuthController extends DevAppController
             'password'  =>  password_hash($request->getParam('password'), PASSWORD_DEFAULT)
         ]);
 
+        $this->auth->attempt($user->email, $request->getParam('password'));
+
         return $response->withRedirect($this->router->pathFor('home'));
     }
 }
