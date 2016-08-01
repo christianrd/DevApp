@@ -14,9 +14,34 @@ use Respect\Validation\Validator as v;
 
 class AuthController extends DevAppController
 {
+    public function getSignIn($request, $response)
+    {
+        return $this->view->render($response, 'auth/signin.twig', [
+            'name'  =>  'Christian D. Rodríguez',
+            'title' =>  'Sign in'
+        ]);
+    }
+
+    public function postSignIn($request, $response)
+    {
+        $auth = $this->auth->attempt(
+            $request->getParam('email'),
+            $request->getParam('password')
+        );
+
+        if (!$auth){
+            return $response->withRedirect($this->router->pathFor('auth.signin'));
+        }
+
+        return $response->withRedirect($this->router->pathFor('home'));
+    }
+
     public function getSignUp($request, $response)
     {
-        return $this->view->render($response, 'auth/signup.twig');
+        return $this->view->render($response, 'auth/signup.twig', [
+            'name'  =>  'Christian D. Rodríguez',
+            'title' =>  'Sign up'
+        ]);
     }
 
     public function postSignUp($request, $response)

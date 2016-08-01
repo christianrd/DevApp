@@ -42,6 +42,9 @@ $container['db'] = function ($container) use ($capsule) {
   return $capsule;
 };
 
+$container['auth'] = function ($container){
+    return new \App\Auth\Auth;
+};
 
 $container['view'] = function ($container){
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
@@ -52,6 +55,11 @@ $container['view'] = function ($container){
         $container->router,
         $container->request->getUri()
     ));
+
+    $view->getEnvironment()->addGlobal('auth', [
+        'check' =>  $container->auth->check(),
+        'user' =>  $container->auth->user()
+    ]);
 
     return $view;
 };

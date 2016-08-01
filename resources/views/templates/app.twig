@@ -28,17 +28,19 @@
     <div class="container">
         {% block content %} {% endblock %}
     </div>
-        {% if title == 'Home' %}
-            {% include 'templates/partials/mainjs.twig' %}
-        {% endif %}
-    <div class="container">
-        <div class="row">
-            <p class="text-center">This <strong>FRAMEWORK</strong> was powered with <i class="fa fa-heart"></i> by <a href="https://www.christiandr.com">{{name}}</a></p>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center text-muted">This <strong>FRAMEWORK</strong> was powered with <i class="fa fa-heart"></i> by <a href="https://www.christiandr.com">{{name}}</a></p>
         </div>
-    </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ base_url() }}/js/vendor/bootstrap.min.js"></script>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ base_url() }}/js/vendor/bootstrap.min.js"></script>
+    {% if title == 'Home' %}
+        {% include 'templates/partials/mainjs.twig' %}
+    {% endif %}
 </body>
 </html>
