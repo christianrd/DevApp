@@ -23,9 +23,9 @@ class AuthController extends DevAppController
     {
 
         $validation = $this->validator->validate($request, [
-            'email'     =>  v::noWhiteSpace()->notEmpty(),
+            'email'     =>  v::noWhitespace()->notEmpty()->email(),
             'name'      =>  v::notEmpty()->alpha(),
-            'password'  =>  v::noWhiteSpace()->notEmpty()
+            'password'  =>  v::noWhitespace()->notEmpty()
         ]);
 
         if ($validation->failed())
