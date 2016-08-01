@@ -1,4 +1,4 @@
-DevApp [![version](https://img.shields.io/badge/version-v0.3.0-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.3.0)
+DevApp [![version](https://img.shields.io/badge/version-v0.3.1-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.3.1)
 ========
 
 DevApp is a simple MVC framework and it contain:
