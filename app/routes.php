@@ -6,9 +6,7 @@
  * Time: 5:33 AM
  */
 
-$app->get('/',  'WelcomeController:index');
-$app->get('/welcome', 'WelcomeController:index');
-
+$app->get('/',  'HomeController:home');
 $app->get('/home', 'HomeController:home')->setName('home');
 
 $app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');

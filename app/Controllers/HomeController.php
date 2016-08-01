@@ -15,6 +15,9 @@ class HomeController extends DevAppController
     public function home($request, $response)
     {
 
-        return $this->view->render($response, 'home.twig');
+        return $this->view->render($response, 'home.twig', [
+            'name'  =>  'Christian D. Rodríguez',
+            'title' =>  'Home'
+        ]);
     }
 }

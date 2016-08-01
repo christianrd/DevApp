@@ -60,10 +60,6 @@ $container['validator'] = function ($container){
     return new App\Validation\Validator;
 };
 
-$container['WelcomeController'] = function ($container){
-    return new \App\Controllers\WelcomeController($container);
-};
-
 $container['HomeController'] = function ($container){
     return new \App\Controllers\HomeController($container);
 };
