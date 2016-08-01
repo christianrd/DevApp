@@ -1,4 +1,4 @@
-DevApp [![version](https://img.shields.io/badge/version-v0.3.1-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.3.1)
+DevApp [![version](https://img.shields.io/badge/version-v0.3.2-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v0.3.2)
 ========
 
 DevApp is a simple MVC framework and it contain:
@@ -7,6 +7,7 @@ DevApp is a simple MVC framework and it contain:
  - Jquery
  - Twig for template views
  - Respect (Validator)
+    - Cross Site Request Forgery (CSRF)
 
 ### Getting Started 
 
