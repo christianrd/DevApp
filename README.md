@@ -6,6 +6,7 @@ DevApp is a simple MVC framework and it contain:
  - FontAwesome(fonts)
  - Jquery
  - Twig for template views
+ - Respect (Validator)
 
 ### Getting Started 
 
