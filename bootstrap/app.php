@@ -12,7 +12,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $app = new Slim\App([
     'settings'  =>  [
+        'determineRouteBeforeAppMiddleware' => true,
         'displayErrorDetails'   =>  true,
+        'addContentLengthHeader' => false,
         'db'    =>  [
             'driver'    =>  'mysql',
             'host'      =>  '127.0.0.1', //host server
@@ -52,6 +54,10 @@ $container['view'] = function ($container){
     return $view;
 };
 
+$container['validator'] = function ($container){
+    return new App\Validation\Validator;
+};
+
 $container['WelcomeController'] = function ($container){
     return new \App\Controllers\WelcomeController($container);
 };
@@ -64,5 +70,6 @@ $container['AuthController'] = function ($container){
     return new \App\Controllers\Auth\AuthController($container);
 };
 
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 require __DIR__ . '/../app/routes.php';
