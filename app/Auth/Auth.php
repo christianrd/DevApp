@@ -15,7 +15,9 @@ class Auth
 {
     public function user()
     {
-        return User::find($_SESSION['user']);
+        if (isset($_SESSION['user'])){
+            return User::find($_SESSION['user']);
+        }
     }
 
     public function check()
@@ -38,5 +40,10 @@ class Auth
         }
 
         return false;
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user']);
     }
 }

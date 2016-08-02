@@ -12,6 +12,7 @@ DevApp is a simple MVC framework and it contain:
     - Sign in
     - Sign up
     - Reset password
+ - Flash messages (Flash for Slim)
 
 ### Getting Started 
 

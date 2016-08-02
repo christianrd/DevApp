@@ -6,12 +6,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ title }}</div>
                 <div class="panel-body">
-                    <form action="{{ path_for('auth.signin') }}" method="post" autocomplete="off">
-                        <div class="form-group {{ errors.email ? 'has-error' : '' }}">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" placeholder="you@domain.com" class="form-control" value="{{ old.email }}">
-                            {% if errors.email %}
-                                <span class="help-block">{{ errors.email | first }}</span>
+                    <form action="{{ path_for('auth.password.change') }}" method="post" autocomplete="off">
+                        <div class="form-group {{ errors.password_old ? 'has-error' : '' }}">
+                            <label for="password_old">Current password</label>
+                            <input type="password" name="password_old" id="password_old" class="form-control">
+                            {% if errors.password_old %}
+                                <span class="help-block">{{ errors.password_old | first }}</span>
                             {% endif %}
                         </div>
                         <div class="form-group {{ errors.password ? 'has-error' : '' }}">

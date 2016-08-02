@@ -14,6 +14,14 @@ use Respect\Validation\Validator as v;
 
 class AuthController extends DevAppController
 {
+
+    public function getSignOut($request, $response)
+    {
+        $this->auth->logout();
+
+        return $response->withRedirect($this->router->pathFor('home'));
+    }
+
     public function getSignIn($request, $response)
     {
         return $this->view->render($response, 'auth/signin.twig', [
@@ -30,6 +38,7 @@ class AuthController extends DevAppController
         );
 
         if (!$auth){
+            $this->flash->addMessage('error', 'Could not sign you in with those details.');
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
 
@@ -63,6 +72,8 @@ class AuthController extends DevAppController
             'name'      =>  $request->getParam('name'),
             'password'  =>  password_hash($request->getParam('password'), PASSWORD_DEFAULT)
         ]);
+
+        $this->flash->addMessage('info', 'You have been signed up!');
 
         $this->auth->attempt($user->email, $request->getParam('password'));
 
