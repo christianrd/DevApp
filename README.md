@@ -1,4 +1,4 @@
-DevApp [![version](https://img.shields.io/badge/version-v1.0.0-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v1.0.0)
+DevApp [![version](https://img.shields.io/badge/version-v1.1.0-yellowgreen.svg)](https://github.com/christianrd/DevApp/releases/tag/v1.1.0)
 ========
 
 DevApp is a simple MVC framework and it contain:
@@ -13,6 +13,7 @@ DevApp is a simple MVC framework and it contain:
     - Sign up
     - Reset password
  - Flash messages (Flash for Slim)
+ - UploadCare (for upload image)
 
 ### Getting Started 
 
