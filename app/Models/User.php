@@ -17,7 +17,8 @@ class User extends Model
     protected $fillable = [
         'name',
         'email',
-        'password'
+        'password',
+        'avatar'
     ];
 
     public function setPassword($password)

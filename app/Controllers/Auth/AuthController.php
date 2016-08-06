@@ -48,8 +48,8 @@ class AuthController extends DevAppController
     public function getSignUp($request, $response)
     {
         return $this->view->render($response, 'auth/signup.twig', [
-            'name'  =>  'Christian D. Rodríguez',
-            'title' =>  'Sign up'
+            'name'      =>  'Christian D. Rodríguez',
+            'title'     =>  'Sign up'
         ]);
     }
 
@@ -59,7 +59,8 @@ class AuthController extends DevAppController
         $validation = $this->validator->validate($request, [
             'email'     =>  v::noWhitespace()->notEmpty()->email()->emailAvailable(),
             'name'      =>  v::notEmpty()->alpha(),
-            'password'  =>  v::noWhitespace()->notEmpty()
+            'password'  =>  v::noWhitespace()->notEmpty(),
+            'avatar'    =>  V::noWhitespace()
         ]);
 
         if ($validation->failed())
@@ -70,7 +71,8 @@ class AuthController extends DevAppController
         $user = User::create([
            'email'      =>  $request->getParam('email'),
             'name'      =>  $request->getParam('name'),
-            'password'  =>  password_hash($request->getParam('password'), PASSWORD_DEFAULT)
+            'password'  =>  password_hash($request->getParam('password'), PASSWORD_DEFAULT),
+            'avatar'    =>  $request->getParam('avatar')
         ]);
 
         $this->flash->addMessage('info', 'You have been signed up!');

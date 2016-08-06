@@ -28,6 +28,11 @@
                                 <span class="help-block">{{ errors.password | first }}</span>
                             {% endif %}
                         </div>
+                        <div class="form-group">
+                            <input type="hidden" role="uploadcare-uploader" name="avatar"
+                                   data-crop="true"
+                                   data-images-only="true" />
+                        </div>
                         <button type="submit" class="btn btn-default">Sing up</button>
 
                         {{ csrf.field | raw }}
@@ -36,4 +41,10 @@
             </div>
         </div>
     </div>
+    <script>
+        UPLOADCARE_LOCALE = "en";
+        UPLOADCARE_TABS = "file url facebook gdrive";
+        UPLOADCARE_PUBLIC_KEY = "YOUR_UPLOADCARE_API_KEY";
+    </script>
+    <script charset="utf-8" src="//ucarecdn.com/widget/2.9.0/uploadcare/uploadcare.full.min.js"></script>
 {% endblock %}
